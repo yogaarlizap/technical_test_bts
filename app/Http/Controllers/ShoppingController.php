@@ -108,6 +108,9 @@ class ShoppingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shopping = Shopping::find($id);
+        $shopping->delete();
+
+        return response()->json('Sukses Delete Data!');
     }
 }
